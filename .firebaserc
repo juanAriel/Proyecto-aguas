@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "proyecto-agua-5cad7": {
+      "hosting": {
+        "proyecto-aguas": [
+          "proyecto-agua-5cad7"
+        ]
+      }
+    }
+  }
+}
