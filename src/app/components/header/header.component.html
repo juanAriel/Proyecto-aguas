@@ -3,17 +3,15 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button> 
-    <a class="navbar-brand" href="http://comfeco.com">
-      <img src="#" alt="" width="40">
-    </a>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:4200/">Inicio<span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/']">Inicio</a>
           </li>
         </ul>
       </div>
-      <a class="btn btn-outline-success registro " href="#" role="button">Registrar</a>
-      <a class="btn btn-outline-success sesion" href="#" role="button">Sesion</a>
+      <a class="btn btn-outline-success registro " [routerLink]="['/login']" role="button">sesion</a>
+      <a class="btn btn-outline-success sesion" >cerrar sesion</a>
+      <a class="btn btn-outline-success sesion" [routerLink]="['/register']">registrar</a>
     </div>    
 </nav>
