@@ -10,8 +10,9 @@
           </li>
         </ul>
       </div>
-      <a class="btn btn-outline-success registro " [routerLink]="['/login']" role="button">sesion</a>
-      <a class="btn btn-outline-success sesion" >cerrar sesion</a>
-      <a class="btn btn-outline-success sesion" [routerLink]="['/register']">registrar</a>
+      <a class="btn btn-outline-success registro " *ngIf="!isLogged" [routerLink]="['/login']" role="button">sesion</a>
+      <a class="btn btn-outline-success cerrar-sesion" *ngIf="isLogged" >cerrar sesion</a>
+      <a class="btn btn-outline-success sesion" *ngIf="!isLogged" [routerLink]="['/register']">registrar</a>
+      <a class="nav-link">{{user.email}}</a>
     </div>    
 </nav>

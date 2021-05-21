@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers:[AuthService]
 })
 export class LoginComponent implements OnInit {
   loginForm=new FormGroup({
@@ -12,11 +14,12 @@ export class LoginComponent implements OnInit {
     password:new FormControl(''),
   });
   
-  constructor() { }
+  constructor(private authSvc:AuthService) { }
 
   ngOnInit(): void {
   }
 onLogin(){
-  console.log('form->', this.loginForm.value);
+  const{email,password}=this.loginForm.value;
+  this.authSvc.login(email,password);
 }
 }
