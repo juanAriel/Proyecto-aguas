@@ -6,13 +6,13 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/']">Inicio</a>
+            <a class="nav-link" routerLink="/">Inicio</a>
           </li>
         </ul>
       </div>
-      <a class="btn btn-outline-success registro " *ngIf="!isLogged" [routerLink]="['/login']" role="button">sesion</a>
-      <a class="btn btn-outline-success cerrar-sesion" *ngIf="isLogged" >cerrar sesion</a>
-      <a class="btn btn-outline-success sesion" *ngIf="!isLogged" [routerLink]="['/register']">registrar</a>
-      <a class="nav-link">{{user.email}}</a>
+      <a class="btn btn-outline-success registro " *ngIf="!isLogged" routerLink="/login" role="button">sesion</a>
+      <a class="btn btn-outline-success cerrar-sesion" *ngIf="isLogged" (click)="onLogout()" >cerrar sesion</a>
+      <a class="btn btn-outline-success sesion" *ngIf="!isLogged" routerLink="/register">registrar</a>
+      <a class="nav-link">{{user?.email}}</a>
     </div>    
 </nav>
